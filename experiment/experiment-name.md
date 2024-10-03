@@ -1,1 +1,1 @@
-## Experiment name
+## Mass Moment Inertia of Pendulum
