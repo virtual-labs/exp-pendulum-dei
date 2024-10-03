@@ -3,7 +3,7 @@
 ### In real Laboratory
 
 #### For Simple Pendulum
-
+1.	Suspend a point mass m from a fixed pivot point using a massless, inextensible string or rod of length L.
 	1.	Suspend a point mass m from a fixed pivot point using a massless, inextensible string or rod of length L.
 	2.	Measure the length L from the pivot to the center of the mass accurately.
 	3.	Displace the pendulum by a small angle (less than 15°).
