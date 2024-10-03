@@ -4,14 +4,14 @@
 
 #### For Simple Pendulum:
 
-	1. Suspend a point mass m from a fixed pivot point using a massless, inextensible string or rod of length L.
-	2. Measure the length L from the pivot to the center of the mass accurately.
-	3. Displace the pendulum by a small angle (less than 15°).
-	4. Release the pendulum.
-	5. Record the time for 10 complete oscillations to reduce timing errors.
-	6. Calculate the period T by dividing the total time by the number of oscillations.
-	7. Use the formula I = mL²  to calculate the theoretical mass moment of inertia.
-	8. verify the length L with the formula using the measured period T.
+	1.	Suspend a point mass m from a fixed pivot point using a massless, inextensible string or rod of length L.
+	2.	Measure the length L from the pivot to the center of the mass accurately.
+	3.	Displace the pendulum by a small angle (less than 15°).
+	4.	Release the pendulum.
+	5.	Record the time for 10 complete oscillations to reduce timing errors.
+	6.	Calculate the period T by dividing the total time by the number of oscillations.
+	7.	Use the formula I = mL²  to calculate the theoretical mass moment of inertia.
+	8.	verify the length L with the formula using the measured period T.
 
 #### For Compound Pendulum:
 
