@@ -11,7 +11,7 @@
 	5. Record the time for 10 complete oscillations to reduce timing errors.
 	6. Calculate the period T by dividing the total time by the number of oscillations.
 	7. Use the formula I = mL²  to calculate the theoretical mass moment of inertia.
-	8. Using the measured period T, verify the length L with the formula.
+	8. verify the length L with the formula using the measured period T.
 
 #### For Compound Pendulum:
 
