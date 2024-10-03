@@ -25,7 +25,7 @@
 <p align="center">
   <img src="images/p1.png">
 </p> 
-Calculate the experimental mass moment of inertia.
+   Calculate the experimental mass moment of inertia.
 
 10. Calculate the moment of inertia using the parallel axis theorem I=Icm+Mh².
 11. Compare the experimental moment of inertia with the theoretical value.
