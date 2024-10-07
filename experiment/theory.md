@@ -116,7 +116,7 @@ By solving this equation for I:
 
 <img align="center"  src="images/Theory_15.png">
 
-## Moment of Inertia about the Center of Mass:
+## Moment of Inertia about the center of Mass:
 
 <img align="center"  src="images/Theory_16.png">
 
