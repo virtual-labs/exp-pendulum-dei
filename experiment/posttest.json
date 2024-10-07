@@ -1,39 +1,60 @@
 {
-  "version": 2.0,
-  "questions": [
-    {
-      "question": "This is a Sample Question 1?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    }
-  ]
+    "version": 2,
+    "questions": [
+        {
+            "question": "If the length of the simple pendulum is doubled, what happens to the period (T)?",
+            "answers": {
+                "a": "The period remains the same",
+                "b": "The period is halved",
+                "c": "The period increases by a factor of 2√2",
+                "d": "The period doubles"
+            },
+            "correctAnswer": "c",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "Which factor does NOT affect the period of a simple pendulum?",
+            "answers": {
+                "a": "Length of the pendulum",
+                "b": "Acceleration due to gravity",
+                "c": "Mass of the pendulum bob",
+                "d": "Amplitude of oscillation (for small angles)"
+            },
+            "correctAnswer": "c",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "In the experiment with the compound pendulum, what is the purpose of calculating the moment of inertia using the parallel axis theorem?",
+            "answers": {
+                "a": "To find the period of oscillation",
+                "b": "To determine the torque acting on the pendulum",
+                "c": "To calculate the moment of inertia about the pivot point",
+                "d": "To measure the angular velocity of the pendulum"
+            },
+            "correctAnswer": "c",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "In the compound pendulum experiment, increasing the distance between the pivot and the center of mass will:",
+            "answers": {
+                "a": "Decrease the period of oscillation",
+                "b": "Increase the moment of inertia",
+                "c": "Have no effect on the moment of inertia",
+                "d": "Decrease the moment of inertia"
+            },
+            "correctAnswer": "b",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "Which of the following could be a source of error in measuring the period of the pendulum in this experiment?",
+            "answers": {
+                "a": "Incorrect measurement of the length of the pendulum",
+                "b": "Air resistance affecting the pendulum's motion",
+                "c": "Friction at the pivot point",
+                "d": "All of the above"
+            },
+            "correctAnswer": "d",
+            "difficulty": "beginner"
+        }
+    ]
 }

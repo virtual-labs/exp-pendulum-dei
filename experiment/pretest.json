@@ -1,39 +1,60 @@
 {
-  "version": 2.0,
-  "questions": [
-    {
-      "question": "This is a Sample Question 1?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
-      },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    }
-  ]
+    "version": 2,
+    "questions": [
+        {
+            "question": "Which of the following best defines a simple pendulum?",
+            "answers": {
+                "a": "A rigid body swinging about a fixed axis",
+                "b": "A point mass suspended from a fixed point by a massless string",
+                "c": "A rigid rod swinging about its center of mass",
+                "d": "A solid sphere rotating about its center"
+            },
+            "correctAnswer": "b",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "What is the formula for the period (T) of a simple pendulum for small angles?",
+            "answers": {
+                "a": "T=2π√(L/g)",
+                "b": "T=2π L/g",
+                "c": "T=2π√(g/L)",
+                "d": "T=2π/g"
+            },
+            "correctAnswer": "a",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "The mass moment of inertia for a simple pendulum is given by which of the following formulas?",
+            "answers": {
+                "a": "I=mL^2",
+                "b": "I=1/2 mL^2",
+                "c": "I=mL",
+                "d": "I=1/12 mL^2"
+            },
+            "correctAnswer": "a",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "What does the parallel axis theorem allow you to calculate?",
+            "answers": {
+                "a": "The center of mass of a pendulum",
+                "b": "The moment of inertia about any axis parallel to the center of mass axis",
+                "c": "The angular frequency of oscillations",
+                "d": "The velocity of the pendulum bob at equilibrium"
+            },
+            "correctAnswer": "b",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "Which of the following is true for a compound pendulum?",
+            "answers": {
+                "a": "It has a massless string and a point mass",
+                "b": "The period is independent of the mass distribution",
+                "c": "The mass is distributed along its length",
+                "d": "It only follows simple harmonic motion for large angles"
+            },
+            "correctAnswer": "c",
+            "difficulty": "beginner"
+        }
+    ]
 }
