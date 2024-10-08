@@ -1,1 +1,117 @@
-/* You CSS goes in here */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url("../images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#mainContainer {
+  width: 90%;
+  background-color: transparent; /* Semi-transparent background for readability */
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+}
+
+#header {
+  text-align: center;
+  padding: 20px;
+  background-color: transparent;
+  color: black;
+}
+
+#simulation {
+  display: flex;
+  height: calc(100vh - 80px); /* Adjust based on header height */
+}
+
+#leftPane,
+#rightPane,
+#leftPane2,
+#rightPane2 {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: transparent;
+  /* border-right: 1px solid #ccc; */
+}
+
+#middlePane {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  /* border-right: 1px solid #ccc; */
+  padding: 20px;
+}
+
+canvas {
+  background-color: transparent;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: white;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+button img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+button:hover {
+  border: 1px solid black;
+}
+
+#stopwatch,
+#stopwatch_comp {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+th,
+td {
+  background-color: #96c5e3;
+}
+
+.comp_inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+#formula {
+  overflow: hidden;
+  height: 50px;
+  width: 100px;
+}
+
+td{
+  width: 200px;
+}
