@@ -1,0 +1,15 @@
+
+/home/runner/work/exp-pendulum-dei/exp-pendulum-dei/experiment/simulation/js/main.js
+   67:7   warning  'updateLengthValue' is assigned a value but never used      no-unused-vars
+   79:7   warning  'updateAngleValue' is assigned a value but never used       no-unused-vars
+   89:7   warning  'checkBox' is assigned a value but never used               no-unused-vars
+  218:11  warning  'deltaTime' is assigned a value but never used              no-unused-vars
+  366:7   warning  'change' is assigned a value but never used                 no-unused-vars
+  393:13  warning  Unexpected lexical declaration in case block                no-case-declarations
+  399:13  warning  Unexpected lexical declaration in case block                no-case-declarations
+  412:7   warning  'checkBox_comp' is assigned a value but never used          no-unused-vars
+  546:5   warning  'animationFrameId_comp' is assigned a value but never used  no-unused-vars
+  571:11  warning  'deltaTime' is assigned a value but never used              no-unused-vars
+
+✖ 10 problems (0 errors, 10 warnings)
+
