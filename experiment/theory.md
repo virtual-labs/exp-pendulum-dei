@@ -47,7 +47,7 @@ Now, consider the dynamics of the simple pendulum,
 When the pendulum is displaced by a small angle θ, the restoring torque τ about the pivot point is given by
 
 <p align="center">
-  <img src="images/Theory_4png">
+  <img src="images/Theory_4.png">
 </p> 
 
 <p align="center">
