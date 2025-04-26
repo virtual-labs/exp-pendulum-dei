@@ -107,6 +107,7 @@ const checkBox = () => {
     updateMomentOfInertia();
 
     console.log(timeperiodSet);
+    getElement('lock').disabled = true;
   } else {
     angleInput.hidden = false;
     lengthInput.hidden = false;
@@ -255,6 +256,7 @@ function stopAnimation() {
 }
 
 const resetAnimation = () => {
+  getElement('lock').disabled = false;
   stopAnimation();
   pendulum.angle = 0.261799; // Reset angle to initial position
   pendulum.length = 300;
