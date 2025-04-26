@@ -257,7 +257,6 @@ function stopAnimation() {
 
 const resetAnimation = () => {
   getElement('lock').disabled = false;
-  getElement('lock_comp').disabled = false;
   stopAnimation();
   pendulum.angle = 0.261799; // Reset angle to initial position
   pendulum.length = 300;
@@ -691,6 +690,8 @@ const resetAnimation_comp = () => {
 
   showInputs_comp();
 
+  
+  getElement('lock_comp').disabled = false;
   getElement("radiusInput").hidden = true;
   getElement("compWidthInput").hidden = true;
   getElement("compLengthInput").hidden = true;
