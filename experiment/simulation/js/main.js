@@ -470,7 +470,7 @@ const checkBox_comp = () => {
       "pendulumType_text",
       `Selected Type: ${comp_pendulum.type.toUpperCase()}`
     );
-     getElement('lock').disabled = true;
+     getElement('lock_comp').disabled = true;
   } else {
     showInputs_comp();
     setText("osciallations_comp_text", `No. of Oscillations:`);
