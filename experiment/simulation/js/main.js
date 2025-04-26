@@ -21,6 +21,7 @@ function showInputs_comp() {
   pendulumTypeSelect.hidden = false;
   comp_mass_input.hidden = false;
   comp_oscillations_input.hidden = false;
+  comp_pivot_input.hidden = false;
 }
 
 const canvas = getElement("cnv");
@@ -455,7 +456,7 @@ const checkBox_comp = () => {
     }
     console.log(timeperiodSet_comp);
 
-    let inputFields = ["angle", "length", "radius", "width", "mass"];
+    let inputFields = ["angle", "length", "radius", "width", "mass", "pivot"];
     inputFields.forEach((prop) => {
       const id = `${prop}_comp`;
       getElement(id).hidden = true;
