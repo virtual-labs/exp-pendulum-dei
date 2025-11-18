@@ -55,6 +55,28 @@
             },
             "correctAnswer": "c",
             "difficulty": "beginner"
+        },
+        {
+            "question": "Which of the following best illustrates a real-world application of the moment of inertia in pendulum systems?",
+            "answers": {
+                "a": "Determining the stability of a bridge under dynamic load",
+                "b": "Designing clock pendulums for accurate timekeeping",
+                "c": "Calculating air resistance on a falling object",
+                "d": "Measuring temperature changes in a swinging pendulum"
+            },
+            "correctAnswer": "b",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "When designing a playground swing or a pendulum-based amusement ride, why must engineers consider the moment of inertia?",
+            "answers": {
+                "a": "To reduce air resistance during motion",
+                "b": "To control the smoothness and safety of oscillations",
+                "c": "To increase the mass of the system for stability",
+                "d": "To minimize the effect of gravity on the system"
+            },
+            "correctAnswer": "b",
+            "difficulty": "beginner"
         }
     ]
 }
