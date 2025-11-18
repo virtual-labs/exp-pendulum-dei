@@ -55,6 +55,28 @@
             },
             "correctAnswer": "d",
             "difficulty": "beginner"
+        },
+        {
+            "question": "If the period (T) of a pendulum is measured for different lengths (L) and plotted as T² vs L, what should the graph look like?",
+            "answers": {
+                "a": "A straight line passing through the origin",
+                "b": "A curve that increases exponentially",
+                "c": "A parabolic curve",
+                "d": "A horizontal line"
+            },
+            "correctAnswer": "a",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "From the slope of the T² vs L graph, which physical constant can be determined?",
+            "answers": {
+                "a": "Mass of the bob",
+                "b": "Acceleration due to gravity (g)",
+                "c": "Angular velocity",
+                "d": "Torque"
+            },
+            "correctAnswer": "b",
+            "difficulty": "beginner"
         }
     ]
 }
