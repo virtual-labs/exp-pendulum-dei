@@ -33,7 +33,7 @@
 
 ### In Simulation
 
-   In a real experiment, the theoretical mass moment of inertia may be approximately estimated by measuring the approximate mass of different simplified geometrical components and adding the Mass Moment of Inertia about the central axis.
+   In a real experiment, the theoretical mass moment of inertia may be estimated by measuring the mass of different simplified geometrical components of different simplified geometrical components and adding the Mass Moment of Inertia about the central axis.
 1.	Select the type of pendulum using the radio buttons.
 2.	Adjust the initial setup parameters using the sliders to calculate the theoretical moment of inertia of the pendulum.
 3.	Click the "Release" button to start the pendulum’s oscillations.
