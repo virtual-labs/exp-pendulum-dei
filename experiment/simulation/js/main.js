@@ -53,7 +53,7 @@ let oscillationCounting = 0;
 
 let pendulum = {
   length: 300,
-  angle: 0.261799, // 15 degree
+  angle: 0, // 0 degree
   gravity: 9.81,
 };
 
@@ -87,8 +87,20 @@ oscillationInput.addEventListener("input", () => {
   maxOscillations = oscillationInput.value;
 });
 
+
+const giveAlerts = (info)=>{
+  window.alert(info);
+  lockButton.checked = false;
+  lockButton_comp.checked = false
+}
+
 const checkBox = () => {
   if (lockButton.checked) {
+    if (angleInput.value == 0){
+      giveAlerts("Value of Angle must not be 0");
+      return;
+    }
+
     pendulum.length = parseFloat(lengthInput.value);
     pendulum.angle = (parseFloat(angleInput.value) * Math.PI) / 180;
     omega = Math.sqrt(pendulum.gravity / (pendulum.length / 100));
@@ -107,7 +119,6 @@ const checkBox = () => {
     drawPendulum();
     updateMomentOfInertia();
 
-    console.log(timeperiodSet);
     getElement('lock').disabled = true;
   } else {
     angleInput.hidden = false;
@@ -208,7 +219,7 @@ const showFinalResults = () => {
 
   timeTakenBlock.innerText = `${totalTimeTaken} sec`;
   timePeriodBlock.innerText = `${timePeriod.toFixed(2)} sec`;
-  resultInertiaBlock.innerText = `${experimentalInertia.toFixed(2)} kg-m²`;
+  resultInertiaBlock.innerText = `${(experimentalInertia*0.95).toFixed(2)} kg-m²`;
 };
 
 function updateTimer() {
@@ -250,26 +261,28 @@ function stopAnimation() {
   // }
   if (isAnimating) {
     isAnimating = false;
+    pendulum.angle = 0
     cancelAnimationFrame(animationFrameId);
     const currentTime = (performance.now() - startTime) / 1000; // Time in seconds
     elapsedTime = currentTime; // Save elapsed time
+
   }
 }
 
 const resetAnimation = () => {
   getElement('lock').disabled = false;
   stopAnimation();
-  pendulum.angle = 0.261799; // Reset angle to initial position
+  pendulum.angle = 0; // Reset angle to initial position
   pendulum.length = 300;
 
-  angleInput.value = 15;
+  angleInput.value = 0;
   lengthInput.value = 300;
 
   setText("angleValue", angleInput.value);
   setText("lengthValue", lengthInput.value);
   setText("stopwatch", `Time: 0.00 s`);
-  setText("momentOfInertiaValue", `-`);
-  setText("countOscillationText", `Oscillation Count :`);
+  setText("momentOfInertiaValue", `0`);
+  setText("countOscillationText", `Number of Oscillations: `);
   setText("oscillationCount", `Oscillation count : 0`);
 
   timeTakenBlock.innerText = `0 sec`;
@@ -321,7 +334,7 @@ let comp_pendulum = {
   type: "rod",
   length: 300,
   width: 10,
-  angle: 0.261799,
+  angle: 0,
   mass: 1,
   radius: 30,
 };
@@ -358,7 +371,6 @@ comp_mass_input.addEventListener("input", () =>
 );
 
 comp_pivot_input.addEventListener("input", () => {
-  console.log(document.getElementById("pivot_comp").value);
   pivotOffset = parseInt(document.getElementById("pivot_comp").value);
   getElement("pivot_comp_val").innerText = comp_pivot_input.value;
   drawCompoundPendulum();
@@ -366,7 +378,6 @@ comp_pivot_input.addEventListener("input", () => {
 
 pendulumTypeSelect.addEventListener("change", function () {
   comp_pendulum.type = this.value;
-  console.log(comp_pendulum.type);
   if (comp_pendulum.type != "rod") {
     pivotOffset = 50;
   }
@@ -429,6 +440,14 @@ let initialAngle_comp = 0.261799;
 
 const checkBox_comp = () => {
   if (lockButton_comp.checked) {
+
+    if (comp_pendulum.angle == 0){
+      giveAlerts("Value of Angle must not be 0");
+      return;
+    }
+
+
+
     const inertia = theoritcal_comp_inertia();
     maxOscillations_comp = parseFloat(comp_oscillations_input.value);
     setText(
@@ -437,7 +456,6 @@ const checkBox_comp = () => {
     );
 
     initialAngle_comp = comp_pendulum.angle;
-    console.log("Inertia calc", inertia);
 
     const factor = comp_pendulum.mass * 9.81;
     let x;
@@ -448,13 +466,11 @@ const checkBox_comp = () => {
     }
 
     timePeriod_comp = 2 * Math.PI * Math.sqrt(x);
-    console.log("Time period comp", timePeriod_comp);
 
     timeperiodSet_comp = [];
     for (var i = 1; i <= maxOscillations_comp; i++) {
       timeperiodSet_comp.push((timePeriod_comp * i).toFixed(2));
     }
-    console.log(timeperiodSet_comp);
 
     let inputFields = ["angle", "length", "radius", "width", "mass", "pivot"];
     inputFields.forEach((prop) => {
@@ -581,8 +597,6 @@ let i_comp = 0;
 function updatePendulum_comp(time) {
   comp_pendulum.angle =
     initialAngle_comp * Math.cos(((2 * Math.PI) / timePeriod_comp) * time);
-  console.log("Comp pendulum angle", comp_pendulum.angle);
-  console.log("Time period comp", timePeriod_comp);
 
   if (time >= timeperiodSet_comp[i_comp]) {
     oscillationCounting_comp++;
@@ -594,7 +608,6 @@ function updatePendulum_comp(time) {
   }
 
   if (oscillationCounting_comp >= maxOscillations_comp) {
-    console.log("Stopped because oscillations completed");
     stopAnimation_comp();
     showFinalResults_comp();
   }
@@ -638,7 +651,7 @@ function showFinalResults_comp() {
 
   setText("timetaken_comp", `${elapsedTime_comp.toFixed(2)} s`);
   setText("timeperiod_comp", `${timePeriod.toFixed(2)} s`);
-  setText("resultInertia_comp", `${experimentalInertia.toFixed(2)} kg·m²`);
+  setText("resultInertia_comp", `${(experimentalInertia*0.95).toFixed(2)} kg·m²`);
 }
 
 function stopAnimation_comp() {
@@ -648,6 +661,7 @@ function stopAnimation_comp() {
   // }
   if (isAnimating_comp) {
     isAnimating_comp = false;
+    comp_pendulum.angle = 0;
     cancelAnimationFrame(animationFrameId);
     const currentTime = (performance.now() - startTime_comp) / 1000; // Time in seconds
     elapsedTime_comp = currentTime; // Save elapsed time
@@ -659,9 +673,6 @@ const startAnimation_comp = () => {
     giveAlert();
     return;
   }
-
-  console.log(comp_pendulum);
-  console.log("Therorital inertia", theoritcal_comp_inertia());
 
   if (!isAnimating_comp) {
     startTime_comp = performance.now() - elapsedTime_comp * 1000; // Continue from where it was left
@@ -683,7 +694,7 @@ const resetAnimation_comp = () => {
     type: "rod",
     length: 300,
     width: 10,
-    angle: 0.261799,
+    angle: 0,
     mass: 1,
     radius: 30,
   };
@@ -699,7 +710,7 @@ const resetAnimation_comp = () => {
   getElement("compPivotInput").hidden = false;
   pendulumTypeSelect.value = "rod";
 
-  setComponentValues_comp(15, 200, 20, 10, 1);
+  setComponentValues_comp(0, 200, 20, 10, 1);
   // Update input fields
   ["angle", "length", "width", "radius"].forEach((prop) => {
     const id = `${prop}_comp`;
@@ -713,7 +724,7 @@ const resetAnimation_comp = () => {
   getElement("pivot_comp").value = 50;
 
   const elementsToUpdate = {
-    angle_comp_val: 15,
+    angle_comp_val: 0,
     length_comp_val: 200,
     width_comp_val: 10,
     radius_comp_val: 20,
