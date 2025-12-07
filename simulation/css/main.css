@@ -1,0 +1,125 @@
+#mainContainer {
+  display: flex;
+  justify-content: center;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+
+}
+
+#container{
+  width: 1330px;
+  height: 610px;
+  flex-direction: column;
+  background: url("../images/background.jpg") no-repeat;
+  justify-content: center;
+
+}
+
+
+
+#header {
+  width: 100%;
+  height: 80px;
+  text-align: center;
+}
+
+#simulation {
+  display: flex;
+  
+}
+
+#leftPane,
+#rightPane,
+#leftPane2,
+#rightPane2 {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: transparent;
+  /* border-right: 1px solid #ccc; */
+}
+
+#middlePane {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  /* border-right: 1px solid #ccc; */
+  padding: 20px;
+}
+
+canvas {
+  background-color: transparent;
+}
+
+.controls {
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: white;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+button img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+button:hover {
+  border: 1px solid black;
+}
+
+#stopwatch,
+#stopwatch_comp {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 3px;
+  margin-top: 20px;
+}
+
+th,
+td {
+  background-color: #96c5e3;
+}
+
+.comp_inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+#formula {
+  overflow: hidden;
+  height: 35px;
+  width: 70px;
+}
+
+td {
+  width: 200px;
+}
+
+#loss-text, #loss-text-comp{
+  font-size: small;
+  color: rgb(9, 36, 244);
+  font-weight: 500;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}

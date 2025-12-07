@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="./css/main.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moment of Inertia of Pendulum - DEI</title>
+  </head>
+
+  <body>
+    <div id="mainContainer">
+      <div id="container">
+        <div id="header">
+          <h2 >Moment of Inertia of Pendulum</h2>
+          <div >
+            <label  for="simplePendulum">Simple Pendulum</label>
+            <input
+              type="radio"
+              id="simplePendulum"
+              name="pendulumType"
+              onclick="change(this)"
+              value="simple"
+              checked
+            />
+            <label for="compoundPendulum">Compound Pendulum</label>
+            <input
+              type="radio"
+              id="compoundPendulum"
+              name="pendulumType"
+              onclick="change(this)"
+              value="compound"
+            />
+          </div>
+        </div>
+        <div id="simulation">
+          <div id="leftPane">
+            <div style="margin-top: 30px">
+              <label for="length">Length (L): </label>
+              <input
+                type="range"
+                id="length"
+                min="150"
+                max="400"
+                value="300"
+                oninput="updateLengthValue(this.value)"
+              />
+              <span id="lengthValue">300</span> cm
+            </div>
+            <div style="margin-top: 30px">
+              <label for="angle">Angle (θ): </label>
+              <input
+                type="range"
+                id="angle"
+                min="-45"
+                max="45"
+                value="0"
+                step="5"
+                oninput="updateAngleValue(this.value)"
+              />
+              <span id="angleValue">0</span>°
+            </div>
+            <div
+              style="margin-top: 30px; border: 1px solid black; padding: 3px"
+            >
+              <label> <b>Theoretical MOI:</b> </label>
+              <span id="momentOfInertiaValue">0</span> kg·m²
+            </div>
+            <div style="margin-top: 30px">
+              <label for="oscillations" id="countOscillationText">Number of Oscillations: </label>
+              <input
+                type="number"
+                id="oscillations"
+                min="1"
+                max="100"
+                value="5"
+              />
+            </div>
+
+            <!-- <button style="margin-top: 30px; color: black" id="lock">
+              Lock
+            </button> -->
+            <label>Lock</label>
+            <input type="checkbox" id="lock" style="margin-top: 30px; color: black" onclick="checkBox()">
+          </div>
+
+          <div id="leftPane2" hidden>
+            <div class="controls" style="margin-top: 50px">
+              <label for="pendulumType" id="pendulumType_text">Select Pendulum Type:</label>
+              <select id="pendulumType">
+                <option value="rod">Uniform Rod</option>
+                <option value="rectangularPlate">Rectangular Plate</option>
+                <option value="disk">Disk</option>
+              </select>
+
+              <div class="comp_inputs">
+
+                <div id="compMassInput">
+                  <label for="mass_comp">Mass (kg):</label>
+                  <input
+                    type="range"
+                    id="mass_comp"
+                    min="0.5"
+                    max="2"
+                    value="1"
+                    step="0.5"
+                  />
+                  <span id="mass_comp_val">1</span>
+                </div>
+
+                <div id="compLengthInput" hidden>
+                  <label for="length_comp">Length (cm):</label>
+                  <input
+                    type="range"
+                    id="length_comp"
+                    min="200"
+                    step="50"
+                    max="350"
+                    value="200"
+                  />
+                  <span id="length_comp_val">200</span>
+                </div>
+
+                
+
+                <div id="compPivotInput">
+                  <label for="pivot_comp">Pivot (cm): </label>
+                  <input
+                  type="range"
+                  id="pivot_comp"
+                  min="50"
+                  max="140"
+                  step="5"
+                  value="50"
+                  />
+                  <span id="pivot_comp_val">50</span>
+                </div>
+
+
+
+
+                <div id="compWidthInput" hidden>
+                  <label for="width_comp">Width (cm):</label>
+                  <input
+                    type="range"
+                    id="width_comp"
+                    min="10"
+                    max="300"
+                    value="10"
+                  />
+                  <span id="width_comp_val">10</span>
+                </div>
+
+                <div id="radiusInput" hidden>
+                  <label for="radius_comp">Radius (cm):</label>
+                  <input
+                    type="range"
+                    id="radius_comp"
+                    min="10"
+                    max="100"
+                    value="20"
+                  />
+                  <span id="radius_comp_val">20</span>
+                </div>
+
+                <div>
+                  <label for="angle_comp">Initial Angle (degrees):</label>
+                  <input
+                    type="range"
+                    id="angle_comp"
+                    min="-45"
+                    max="45"
+                    value="0"
+                    step="5"
+                  />
+                  <span id="angle_comp_val">0</span>
+                </div>
+
+                <div>
+                  <label for="oscillations_comp"
+                    id="osciallations_comp_text">Number of Oscillations:
+                  </label>
+                  <input
+                    type="number"
+                    id="oscillations_comp"
+                    min="1"
+                    max="100"
+                    value="5"
+                  />
+                </div>
+
+                <div>
+
+                  <label>Lock</label>
+            <input type="checkbox" id="lock_comp" style="margin-top: 30px; color: black" onclick="checkBox_comp()">
+
+                </div>
+
+                <div style="border:1px solid black; padding: 2px;">
+                  <b><span id="comp_inertia_theoritcal"> Theoretical MOI : 0</span> </b>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="middlePane">
+            <canvas id="cnv" width="700px" height="600px"></canvas>
+            <canvas id="cnv2" hidden width="700px" height="600px"></canvas>
+          </div>
+
+          <div id="rightPane">
+            <div class="controls">
+              <div class="control_heading"><b>Controls:</b></div>
+              <div class="play">
+                Release
+                <button type="play" id="playButton">
+                  <img src="./images/play.png" />
+                </button>
+              </div>
+              <div class="pause">
+                Pause
+                <button type="button" id="pauseButton">
+                  <img src="./images/pause.png" alt="Pause" />
+                </button>
+              </div>
+              <div id="reset">
+                Reset
+                <button type="reset" id="resetButton">
+                  <img src="./images/reset.png" />
+                </button>
+              </div>
+            </div>
+            <div class="stopwatch" id="stopwatch">Time: 0.00 s</div>
+
+            <div style="margin-top: 20px">
+              <span id="oscillationCount">Oscillation count : 0</span>
+            </div>
+
+            <table>
+              <tr>
+                <th>Results</th>
+                <th>Values</th>
+              </tr>
+              <tr>
+                <td>Total Time</td>
+                <td id="timetaken">0 sec</td>
+              </tr>
+              <tr>
+                <td>Time Period</td>
+                <td id="timeperiod">0 sec</td>
+              </tr>
+              <tr>
+                <td>Moment of Inertia (Experimental) </td>
+                <td id="resultInertia">0 kg-m<sup>2</sup></td>
+              </tr>
+            </table>
+
+            <span id="loss-text">Note: Experimental values are adjusted for an estimated 5% mechanical loss.</span>
+          </div>
+
+          <div id="rightPane2" hidden>
+            <div class="controls">
+              <div class="control_heading"><b>Controls:</b></div>
+              <div class="play">
+                Release
+                <button type="play" id="playButton_comp">
+                  <img src="images/play.png" />
+                </button>
+              </div>
+              <div class="pause">
+                Pause
+                <button type="button" id="pauseButton_comp">
+                  <img src="images/pause.png" alt="Pause" />
+                </button>
+              </div>
+              <div id="reset">
+                Reset
+                <button type="reset" id="resetButton_comp">
+                  <img src="images/reset.png" />
+                </button>
+              </div>
+            </div>
+
+            <div class="stopwatch" id="stopwatch_comp">Time: 0.00 s</div>
+
+            <div style="margin-top: 20px"></div>
+              <span id="oscillationCount_comp">Oscillation count : 0</span>
+
+
+            <div>
+              <table>
+                <tr>
+                  <th>Results</th>
+                  <th>Values</th>
+                </tr>
+                <tr>
+                  <td>Total Time</td>
+                  <td id="timetaken_comp">0 sec</td>
+                </tr>
+                <tr>
+                  <td>Time Period</td>
+                  <td id="timeperiod_comp">0 sec</td>
+                </tr>
+                <tr>
+                  <td>Formula Used</td>
+                  <td><img id="formula" src="images/formula.png" /></td>
+                </tr>
+
+                <tr>
+                  <td>Moment of Inertia (Experimental) </td>
+                  <td id="resultInertia_comp">0 kg-m²</td>
+                </tr>
+              </table>
+
+              <span id="loss-text">Note: Experimental values are adjusted for an estimated 5% mechanical loss.</span>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/main.js"></script>
+    <div id="copyright" title="Developer : Harsh Pathak,Aysha and Ambuj Kulshrestha , Dayalbagh Educational Instiute,Agra "></div>
+  <div id="Developer_information" 
+  title="Developer Name:
+               1.Harsh Pathak
+                 (06hpathak@gmail.com)
+               2.Aysha
+                 (satsangiaysha@gmail.com)
+               3.Ambuj Kulshrestha
+                 (ambujkul.dei@gmail.com)
+  Instiute Name: Dayalbagh Educational Instiute, Agra">
+  </div>
+  <script src="../assets/js/iframeResize.js"></script>
+        
+        </body>
+</html>

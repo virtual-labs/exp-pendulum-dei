@@ -1,0 +1,82 @@
+{
+    "version": 2,
+    "questions": [
+        {
+            "question": "If the length of the simple pendulum is doubled, what happens to the period (T)?",
+            "answers": {
+                "a": "The period remains the same",
+                "b": "The period is halved",
+                "c": "The period increases by a factor of 2√2",
+                "d": "The period doubles"
+            },
+            "correctAnswer": "c",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "Which factor does NOT affect the period of a simple pendulum?",
+            "answers": {
+                "a": "Length of the pendulum",
+                "b": "Acceleration due to gravity",
+                "c": "Mass of the pendulum bob",
+                "d": "Amplitude of oscillation (for small angles)"
+            },
+            "correctAnswer": "c",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "In the experiment with the compound pendulum, what is the purpose of calculating the moment of inertia using the parallel axis theorem?",
+            "answers": {
+                "a": "To find the period of oscillation",
+                "b": "To determine the torque acting on the pendulum",
+                "c": "To calculate the moment of inertia about the pivot point",
+                "d": "To measure the angular velocity of the pendulum"
+            },
+            "correctAnswer": "c",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "In the compound pendulum experiment, increasing the distance between the pivot and the center of mass will:",
+            "answers": {
+                "a": "Decrease the period of oscillation",
+                "b": "Increase the moment of inertia",
+                "c": "Have no effect on the moment of inertia",
+                "d": "Decrease the moment of inertia"
+            },
+            "correctAnswer": "b",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "Which of the following could be a source of error in measuring the period of the pendulum in this experiment?",
+            "answers": {
+                "a": "Incorrect measurement of the length of the pendulum",
+                "b": "Air resistance affecting the pendulum's motion",
+                "c": "Friction at the pivot point",
+                "d": "All of the above"
+            },
+            "correctAnswer": "d",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "If the period (T) of a pendulum is measured for different lengths (L) and plotted as T² vs L, what should the graph look like?",
+            "answers": {
+                "a": "A straight line passing through the origin",
+                "b": "A curve that increases exponentially",
+                "c": "A parabolic curve",
+                "d": "A horizontal line"
+            },
+            "correctAnswer": "a",
+            "difficulty": "beginner"
+        },
+        {
+            "question": "From the slope of the T² vs L graph, which physical constant can be determined?",
+            "answers": {
+                "a": "Mass of the bob",
+                "b": "Acceleration due to gravity (g)",
+                "c": "Angular velocity",
+                "d": "Torque"
+            },
+            "correctAnswer": "b",
+            "difficulty": "beginner"
+        }
+    ]
+}
