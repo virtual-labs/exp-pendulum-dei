@@ -53,10 +53,11 @@
                 id="angle"
                 min="-45"
                 max="45"
-                value="15"
+                value="0"
+                step="5"
                 oninput="updateAngleValue(this.value)"
               />
-              <span id="angleValue">15</span>°
+              <span id="angleValue">0</span>°
             </div>
             <div
               style="margin-top: 30px; border: 1px solid black; padding: 3px"
@@ -112,8 +113,8 @@
                     type="range"
                     id="length_comp"
                     min="200"
-                    step="100"
-                    max="400"
+                    step="50"
+                    max="350"
                     value="200"
                   />
                   <span id="length_comp_val">200</span>
@@ -168,9 +169,10 @@
                     id="angle_comp"
                     min="-45"
                     max="45"
-                    value="15"
+                    value="0"
+                    step="5"
                   />
-                  <span id="angle_comp_val">15</span>
+                  <span id="angle_comp_val">0</span>
                 </div>
 
                 <div>
@@ -194,7 +196,7 @@
                 </div>
 
                 <div style="border:1px solid black; padding: 2px;">
-                  <b><span id="comp_inertia_theoritcal"> Theoritcal MOI : 0</span> </b>
+                  <b><span id="comp_inertia_theoritcal"> Theoretical MOI : 0</span> </b>
                 </div>
               </div>
             </div>
@@ -247,10 +249,12 @@
                 <td id="timeperiod">0 sec</td>
               </tr>
               <tr>
-                <td>Moment of Inertia (Experimental)</td>
+                <td>Moment of Inertia (Experimental) </td>
                 <td id="resultInertia">0 kg-m<sup>2</sup></td>
               </tr>
             </table>
+
+            <span id="loss-text">Note: Experimental values are adjusted for an estimated 5% mechanical loss.</span>
           </div>
 
           <div id="rightPane2" hidden>
@@ -302,10 +306,12 @@
                 </tr>
 
                 <tr>
-                  <td>Moment of Inertia (Experimental)</td>
+                  <td>Moment of Inertia (Experimental) </td>
                   <td id="resultInertia_comp">0 kg-m²</td>
                 </tr>
               </table>
+
+              <span id="loss-text">Note: Experimental values are adjusted for an estimated 5% mechanical loss.</span>
             </div>
           </div>
           </div>
